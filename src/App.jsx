@@ -26,8 +26,7 @@ function CardContent({ children, className }) {
 }
 
 function App() {
-
-  
+  const [isOpen, setIsOpen] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
   const [statusColor, setStatusColor] = useState('text-green-400');
@@ -86,16 +85,41 @@ function App() {
   return (
     <>
       <nav className="fixed top-0 left-0 w-full bg-black text-yellow-400 shadow-md z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Orium</h1>
-          <ul className="flex space-x-8 font-medium">
-            <li className="hover:text-yellow-300 transition cursor-pointer">Home</li>
-            <a href="#services" className="scroll-smooth delay-100"><li className="hover:text-yellow-300 transition cursor-pointer">Services</li></a>
-            <a href="#aboutus"><li className="hover:text-yellow-300 transition cursor-pointer">About Us</li></a>
-            <a href="#contact"><li className="hover:text-yellow-300 transition cursor-pointer">Contact Us</li></a>
-          </ul>
-        </div>
-      </nav>
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <h1 className="text-2xl font-bold">Orium</h1>
+
+        {/* Hamburger Icon */}
+        <button
+          className="md:hidden text-2xl focus:outline-none cursor-pointer"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+        >
+          {isOpen ? "✖️" : "☰"}
+        </button>
+
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex space-x-8 font-medium">
+          <li className="hover:text-yellow-300 cursor-pointer">Home</li>
+          <a href="#services" className="hover:text-yellow-300 cursor-pointer">Services</a>
+          <a href="#aboutus" className="hover:text-yellow-300 cursor-pointer">About Us</a>
+          <a href="#contact" className="hover:text-yellow-300 cursor-pointer">Contact Us</a>
+        </ul>
+      </div>
+
+      {/* Mobile Nav with smooth animation */}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-60 opacity-100 scale-100" : "max-h-0 opacity-0 scale-95"
+        }`}
+      >
+        <ul className="flex flex-col space-y-4 px-6 pb-4 pt-2 font-medium">
+          <li className="hover:text-yellow-300 cursor-pointer">Home</li>
+          <a href="#services" className="hover:text-yellow-300 cursor-pointer">Services</a>
+          <a href="#aboutus" className="hover:text-yellow-300 cursor-pointer">About Us</a>
+          <a href="#contact" className="hover:text-yellow-300 cursor-pointer">Contact Us</a>
+        </ul>
+      </div>
+    </nav>
       <div className="min-h-screen bg-black text-yellow-400 font-sans mt-12 px-6 py-12 space-y-24">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -242,7 +266,7 @@ function App() {
           </div>
         </motion.div>
         </div>
-       <div className="pt-5" id="contact">
+       <div className="pt-8" id="contact">
        <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
