@@ -1,8 +1,8 @@
 const nodemailer = require('nodemailer');
 
-exports.handler = async (req, res) => {
+module.exports = async (req, res) => {
   if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' });
+    return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
   const { name, email, message } = req.body;
@@ -18,7 +18,7 @@ exports.handler = async (req, res) => {
   const mailOptions = {
     from: email,
     to: process.env.MY_EMAIL,
-    subject: `Contact from ${name}`,
+    subject: `New message from ${name}`,
     text: message,
   };
 
@@ -26,7 +26,7 @@ exports.handler = async (req, res) => {
     await transporter.sendMail(mailOptions);
     return res.status(200).json({ message: 'Email sent successfully!' });
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ message: 'Something went wrong.' });
+    console.error('Error sending email:', error);
+    return res.status(500).json({ message: 'Email failed to send.' });
   }
 };
