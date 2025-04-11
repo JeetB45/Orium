@@ -43,7 +43,7 @@ function App() {
     };
 
     try {
-      const res = await fetch("/send-mail", {
+      const res = await fetch("orium-rbmnmc80w-jeetb45s-projects.vercel.app/send-email", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
