@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
+const serverless = require('serverless-http');
 
 const app = express();
 app.use(cors());
@@ -34,6 +35,5 @@ app.post('/send-email', async (req, res) => {
   }
 });
 
-app.listen("https://orium-flax.vercel.app/", () => {
-  console.log("server started");
-});
+module.exports = app;
+module.exports.handler = serverless(app);
