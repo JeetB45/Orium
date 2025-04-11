@@ -9,7 +9,7 @@ export default defineConfig({
   ],
   server: {
     proxy: {
-      '/api': 'http://localhost:5000', // For local development only
+      '/send-email': 'http://localhost:5000', // For local development only
     }
   }
 })
