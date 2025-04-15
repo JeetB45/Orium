@@ -343,7 +343,7 @@ function App() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
               <a href="#contact">
-              <Button className="bg-violet-600 hover:bg-violet-700 text-white px-6 py-3 flex items-center justify-center gap-2 text-sm sm:text-base w-1/2 sm:w-auto">
+              <Button className="bg-violet-600 cursor-pointer hover:bg-violet-700 text-white px-6 py-3 flex items-center justify-center gap-2 text-sm sm:text-base w-1/2 sm:w-auto">
                 <span>Explore Solutions</span>
                 <ArrowRight className="h-5 w-5" />
               </Button></a>
