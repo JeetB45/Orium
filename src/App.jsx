@@ -320,10 +320,10 @@ function App() {
               }`}
           >
             <ul className="flex flex-col space-y-4 pb-4 pt-2 font-medium text-white">
-              <li><a href="#home" className="hover:text-violet-500">Home</a></li>
-              <li><a href="#services" className="hover:text-violet-500">Services</a></li>
-              <li><a href="#aboutus" className="hover:text-violet-500">About Us</a></li>
-              <li><a href="#contact" className="hover:text-violet-500">Contact Us</a></li>
+              <li onClick={()=>setIsOpen(false)}><a href="#home" className="hover:text-violet-500">Home</a></li>
+              <li onClick={()=>setIsOpen(false)}><a href="#services" className="hover:text-violet-500" onClick={()=>setIsOpen(!isOpen)}>Services</a></li>
+              <li onClick={()=>setIsOpen(false)}><a href="#aboutus" className="hover:text-violet-500" onClick={()=>setIsOpen(!isOpen)}>About Us</a></li>
+              <li onClick={()=>setIsOpen(false)}><a href="#contact" className="hover:text-violet-500" onClick={()=>setIsOpen(!isOpen)}>Contact Us</a></li>
             </ul>
           </div>
         </nav>
