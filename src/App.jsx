@@ -342,16 +342,17 @@ function App() {
               Empowering enterprises with cutting-edge technology solutions that drive innovation and digital excellence
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
+              <a href="#contact">
               <Button className="bg-violet-600 hover:bg-violet-700 text-white px-6 py-3 flex items-center justify-center gap-2 text-sm sm:text-base w-1/2 sm:w-auto">
                 <span>Explore Solutions</span>
                 <ArrowRight className="h-5 w-5" />
-              </Button>
-              <Button
+              </Button></a>
+              {/* <Button
                 variant="outline"
                 className="border-violet-700 bg-amber-100 text-violet-600 hover:bg-violet-950/50 px-6 py-3 text-sm sm:text-base w-1/2 sm:w-auto"
               >
                 View Case Studies
-              </Button>
+              </Button> */}
             </div>
           </div>
         </section>
