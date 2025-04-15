@@ -305,7 +305,7 @@ function App() {
 
             {/* Desktop Menu */}
             <ul className="hidden md:flex space-x-8 font-medium text-white">
-              <li className="hover:text-violet-500 cursor-pointer">Home</li>
+              <li className="hover:text-violet-500 cursor-pointer"><a href="#home">Home</a></li>
               <li><a href="#services" className="hover:text-violet-500 cursor-pointer">Services</a></li>
               <li><a href="#aboutus" className="hover:text-violet-500 cursor-pointer">About Us</a></li>
               <li><a href="#contact" className="hover:text-violet-500 cursor-pointer">Contact Us</a></li>
@@ -327,7 +327,7 @@ function App() {
         </nav>
 
         {/* Hero Section */}
-        <section className="min-h-[80vh] flex flex-col justify-center items-center px-4 relative text-center">
+        <section id="home" className="min-h-[80vh] flex flex-col justify-center items-center px-4 relative text-center">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-800/20 via-transparent to-transparent" />
           <div className="relative z-10 max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-bold text-center mb-6">
@@ -355,7 +355,7 @@ function App() {
 
 
         {/*Services */}
-        <section className="py-32 px-4 relative">
+        <section id="services" className="py-32 px-4 relative">
           <div className="container">
             <motion.h2
               className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent mb-4 text-center"
@@ -484,7 +484,7 @@ function App() {
         </section>
 
         {/* About Us Section */}
-        <section className="py-32 px-4 relative">
+        <section id="aboutus" className="py-32 px-4 relative">
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
@@ -586,7 +586,7 @@ function App() {
         </section>
 
         {/* Contact Section */}
-        <section className="py-32 px-4 relative bg-black/40 flex justify-center">
+        <section id="contact" className="py-32 px-4 relative bg-black/40 flex justify-center">
           <div className="container max-w-4xl w-full">
             <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent mb-4 text-center">
               Get In Touch
