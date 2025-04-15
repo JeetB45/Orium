@@ -320,10 +320,10 @@ function App() {
               }`}
           >
             <ul className="flex flex-col space-y-4 pb-4 pt-2 font-medium text-white">
-              <li onClick={()=>setIsOpen(false)}><a href="#home" className="hover:text-violet-500 cursor-pointer">Home</a></li>
-              <li onClick={()=>setIsOpen(false)}><a href="#services" className="hover:text-violet-500 cursor-pointer">Services</a></li>
-              <li onClick={()=>setIsOpen(false)}><a href="#aboutus" className="hover:text-violet-500 cursor-pointer">About Us</a></li>
-              <li onClick={()=>setIsOpen(false)}><a href="#contact" className="hover:text-violet-500 cursor-pointer">Contact Us</a></li>
+              <li onClick={() => setIsOpen(false)}><a href="#home" className="hover:text-violet-500 cursor-pointer">Home</a></li>
+              <li onClick={() => setIsOpen(false)}><a href="#services" className="hover:text-violet-500 cursor-pointer">Services</a></li>
+              <li onClick={() => setIsOpen(false)}><a href="#aboutus" className="hover:text-violet-500 cursor-pointer">About Us</a></li>
+              <li onClick={() => setIsOpen(false)}><a href="#contact" className="hover:text-violet-500 cursor-pointer">Contact Us</a></li>
             </ul>
           </div>
         </nav>
@@ -540,7 +540,7 @@ function App() {
                   </div>
                 </motion.div>
               </div>
-              <div className="relative">
+              <div className="hidden md:block relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-violet-500/20 rounded-2xl blur-3xl" />
                 <div className="relative aspect-square rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-8 flex items-center justify-center">
                   <Users className="w-32 h-32 text-violet-400" />
