@@ -288,6 +288,8 @@ function App() {
   return (
     <>
       <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-slate-900 text-white font-sans">
+        
+        {/*Navbar*/}
         <nav className="fixed top-0 left-0 w-full bg-black/5 backdrop-blur border-b border-white/10 z-50">
           <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent">Orium</h1>
@@ -324,7 +326,6 @@ function App() {
           </div>
         </nav>
 
-
         {/* Hero Section */}
         <section className="min-h-[80vh] flex flex-col justify-center items-center px-4 relative text-center">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-800/20 via-transparent to-transparent" />
@@ -344,7 +345,7 @@ function App() {
               </Button>
               <Button
                 variant="outline"
-                className="border-violet-700 bg-amber-100 text-violet-400 hover:bg-violet-950/50 px-6 py-3 text-sm sm:text-base w-1/2 sm:w-auto"
+                className="border-violet-700 bg-amber-100 text-violet-600 hover:bg-violet-950/50 px-6 py-3 text-sm sm:text-base w-1/2 sm:w-auto"
               >
                 View Case Studies
               </Button>
