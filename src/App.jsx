@@ -343,7 +343,7 @@ function App() {
             </p>
             <div className="flex flex-row sm:flex-row justify-center items-center gap-6">
               <a href="#services">
-              <Button size="lg" className="bg-violet-600 hover:bg-violet-700 flex justify-center items-center text-white px-8">
+              <Button size="lg" className="bg-violet-600 hover:bg-violet-700 cursor-pointer flex justify-center items-center text-white px-8">
               Explore Solutions <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
               </a>
@@ -356,9 +356,9 @@ function App() {
           <div className="container">
             <motion.h2
               className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent mb-4 text-center"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: -10 }}
-              transition={{ duration: 0.6 }}
+              transition={{ delay:0.2 ,duration: 0.6 }}
             >
               Our Services
             </motion.h2>
@@ -378,9 +378,9 @@ function App() {
                   key={service.title}
                   className="p-6 rounded-xl bg-white/5 cursor-pointer backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300 group"
                   whileHover={{ scale: 1.05 }}
-                  initial={{ opacity: 0, y: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  transition={{ duration: 0.2, delay: index * 0.1 }}
                 >
                   <div className="mb-4">{service.icon}</div>
                   <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
@@ -432,16 +432,16 @@ function App() {
                   Discover how we've helped leading organizations achieve digital transformation
                 </p>
               </div>
-              <Button variant="ghost" className="hidden md:flex items-center text-violet-400 hover:text-violet-300">
+              <Button variant="ghost" className="hidden md:flex items-center text-violet-400 cursor-pointer hover:text-violet-300">
                 View All Projects <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 cursor-pointer lg:grid-cols-3 gap-8">
               {projects.map((project) => (
                 <ProjectCard key={project.title} {...project} />
               ))}
             </div>
-            <Button variant="ghost" className="md:hidden mt-8 w-full text-violet-400 hover:text-violet-300">
+            <Button variant="ghost" className="md:hidden mt-8 w-full flex justify-center items-center sm:flex text-violet-400 hover:text-violet-300">
               View All Projects <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
@@ -459,7 +459,7 @@ function App() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {technologies.map((tech) => (
-                <Card key={tech.category} className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors">
+                <Card key={tech.category} className="bg-white/5 border-white/10 backdrop-blur-sm cursor-pointer hover:bg-white/10 transition-colors">
                   <CardContent className="p-6">
                     <h3 className="text-xl font-semibold text-white mb-4">{tech.category}</h3>
                     <ul className="space-y-2">
@@ -563,16 +563,14 @@ function App() {
                   Let’s Build Something Incredible Together
                 </h2>
 
-                <p className="text-gray-400 mb-6">
-                  Ready to elevate your digital presence? Partner with us and turn your ideas into reality.
+                <p className="text-gray-300 text-center mb-6">
+                  Book a 30-minute consultation with our experts and discover how we can transform your digital presence
                 </p>
 
-                {/* 👉 Centered Button */}
-                <div className="flex justify-center">
-                  <Button className="bg-violet-600 hover:bg-violet-700 text-white px-6 py-3 flex items-center gap-2 text-sm sm:text-base w-full sm:w-auto">
-                    <span>Get Started</span>
-                    <ArrowRight className="h-5 w-5" />
-                  </Button>
+                <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <Button size="lg" className="bg-violet-600 flex justify-center items-center cursor-pointer hover:bg-violet-700">
+                  Schedule Now <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
                 </div>
               </div>
             </div>
