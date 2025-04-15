@@ -290,9 +290,11 @@ function App() {
       <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-slate-900 text-white font-sans">
 
         {/*Navbar*/}
-        <nav className="fixed top-0 left-0 w-full bg-black/5 backdrop-blur border-b border-white/10 z-50">
+        <nav className="fixed top-0 left-0 w-full bg-black/70 backdrop-blur-md border-b border-white/10 z-50">
           <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent">Orium</h1>
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent">
+              Orium
+            </h1>
 
             {/* Hamburger Icon */}
             <button
@@ -314,17 +316,18 @@ function App() {
 
           {/* Mobile Menu */}
           <div
-            className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-60 opacity-100 scale-100" : "max-h-0 opacity-0 scale-95"
+            className={`md:hidden transition-all duration-300 ease-in-out bg-black/80 px-6 ${isOpen ? "max-h-60 opacity-100 scale-100" : "max-h-0 opacity-0 scale-95"
               }`}
           >
-            <ul className="flex flex-col space-y-4 px-6 pb-4 pt-2 font-medium text-white">
-              <li className="hover:text-violet-500 cursor-pointer">Home</li>
-              <li><a href="#services" className="hover:text-violet-500 cursor-pointer">Services</a></li>
-              <li><a href="#aboutus" className="hover:text-violet-500 cursor-pointer">About Us</a></li>
-              <li><a href="#contact" className="hover:text-violet-500 cursor-pointer">Contact Us</a></li>
+            <ul className="flex flex-col space-y-4 pb-4 pt-2 font-medium text-white">
+              <li><a href="#home" className="hover:text-violet-500">Home</a></li>
+              <li><a href="#services" className="hover:text-violet-500">Services</a></li>
+              <li><a href="#aboutus" className="hover:text-violet-500">About Us</a></li>
+              <li><a href="#contact" className="hover:text-violet-500">Contact Us</a></li>
             </ul>
           </div>
         </nav>
+
 
         {/* Hero Section */}
         <section id="home" className="min-h-[80vh] flex flex-col justify-center items-center px-4 relative text-center">
