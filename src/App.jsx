@@ -328,7 +328,6 @@ function App() {
           </div>
         </nav>
 
-
         {/* Hero Section */}
         <section id="home" className="min-h-[80vh] flex flex-col justify-center items-center px-4 relative text-center">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-800/20 via-transparent to-transparent" />
@@ -339,24 +338,18 @@ function App() {
               </span>
             </h1>
             <p className="text-xl text-gray-400 mb-12">
-              Empowering enterprises with cutting-edge technology solutions that drive innovation and digital excellence
+              Empowering enterprises with cutting-edge technology so
+              lutions that drive innovation and digital excellence
             </p>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
-              <a href="#contact">
-              <Button className="bg-violet-600 cursor-pointer hover:bg-violet-700 text-white px-6 py-3 flex items-center justify-center gap-2 text-sm sm:text-base w-1/2 sm:w-auto">
-                <span>Explore Solutions</span>
-                <ArrowRight className="h-5 w-5" />
-              </Button></a>
-              {/* <Button
-                variant="outline"
-                className="border-violet-700 bg-amber-100 text-violet-600 hover:bg-violet-950/50 px-6 py-3 text-sm sm:text-base w-1/2 sm:w-auto"
-              >
-                View Case Studies
-              </Button> */}
+            <div className="flex flex-row sm:flex-row justify-center items-center gap-6">
+              <a href="#services">
+              <Button size="lg" className="bg-violet-600 hover:bg-violet-700 flex justify-center items-center text-white px-8">
+              Explore Solutions <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+              </a>
             </div>
           </div>
         </section>
-
 
         {/*Services */}
         <section id="services" className="py-32 px-4 relative">
