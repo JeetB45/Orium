@@ -288,7 +288,7 @@ function App() {
   return (
     <>
       <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-slate-900 text-white font-sans">
-        
+
         {/*Navbar*/}
         <nav className="fixed top-0 left-0 w-full bg-black/5 backdrop-blur border-b border-white/10 z-50">
           <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -359,10 +359,9 @@ function App() {
           <div className="container">
             <motion.h2
               className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent mb-4 text-center"
-              initial={{ opacity: 0, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: -10 }}
               transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
             >
               Our Services
             </motion.h2>
@@ -370,9 +369,8 @@ function App() {
             <motion.p
               className="text-gray-400 text-center max-w-2xl mx-auto mb-16"
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: -10 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              viewport={{ once: true }}
             >
               Comprehensive digital solutions tailored to your business needs
             </motion.p>
@@ -383,10 +381,9 @@ function App() {
                   key={service.title}
                   className="p-6 rounded-xl bg-white/5 cursor-pointer backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300 group"
                   whileHover={{ scale: 1.05 }}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 0 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.1, delay: index * 0.1 }}
-                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
                   <div className="mb-4">{service.icon}</div>
                   <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
@@ -490,7 +487,7 @@ function App() {
               <div>
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: -20 }}
                   transition={{ duration: 1 }}
                   className="max-w-6xl mx-auto py-20 px-4 md:px-8 text-white"
                 >
@@ -587,69 +584,125 @@ function App() {
 
         {/* Contact Section */}
         <section id="contact" className="py-32 px-4 relative bg-black/40 flex justify-center">
-          <div className="container max-w-4xl w-full">
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent mb-4 text-center">
+          <motion.div
+            className="container max-w-4xl w-full"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: false }}
+          >
+            <motion.h2
+              className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent mb-4 text-center"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: false }}
+            >
               Get In Touch
-            </h2>
-            <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
-              Ready to start your project? Contact us for a free consultation
-            </p>
+            </motion.h2>
 
-            <form ref={form} onSubmit={sendEmail} className="space-y-6 mx-auto max-w-2xl">
+            <motion.p
+              className="text-gray-400 text-center max-w-2xl mx-auto mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: false }}
+            >
+              Ready to start your project? Contact us for a free consultation
+            </motion.p>
+
+            <motion.form
+              ref={form}
+              onSubmit={sendEmail}
+              className="space-y-6 mx-auto max-w-2xl"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: false }}
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input
-                  type="text"
-                  placeholder="Your Name"
-                  name="user_name"
-                  className="bg-white/5 border-white/10 text-white placeholder:text-gray-500"
-                />
-                <Input
-                  type="email"
-                  name="user_email"
-                  placeholder="Your Email"
-                  className="bg-white/5 border-white/10 text-white placeholder:text-gray-500"
-                />
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: 0.4 }}
+                  viewport={{ once: false }}
+                >
+                  <Input
+                    type="text"
+                    placeholder="Your Name"
+                    name="user_name"
+                    className="bg-white/5 border-white/10 text-white placeholder:text-gray-500"
+                  />
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: 0.5 }}
+                  viewport={{ once: false }}
+                >
+                  <Input
+                    type="email"
+                    name="user_email"
+                    placeholder="Your Email"
+                    className="bg-white/5 border-white/10 text-white placeholder:text-gray-500"
+                  />
+                </motion.div>
               </div>
 
-              <Textarea
-                placeholder="Your Message"
-                name="message"
-                className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 min-h-[200px]"
-              />
-
-              <Button
-                type="submit"
-                className={`bg-violet-600 cursor-pointer text-white w-full px-6 py-3 rounded-2xl text-lg hover:bg-violet-700`}
-                disabled={isSending}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.6 }}
+                viewport={{ once: false }}
               >
-                {isSending ? (
-                  <span className="flex items-center justify-center gap-2">
-                    <svg
-                      className="animate-spin h-5 w-5 text-white"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle
-                        className="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                      ></circle>
-                      <path
-                        className="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8v8H4z"
-                      />
-                    </svg>
-                    Sending...
-                  </span>
-                ) : (
-                  'Send Message'
-                )}
-              </Button>
+                <Textarea
+                  placeholder="Your Message"
+                  name="message"
+                  className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 min-h-[200px]"
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.7 }}
+                viewport={{ once: false }}
+              >
+                <Button
+                  type="submit"
+                  className="bg-violet-600 cursor-pointer text-white w-full px-6 py-3 rounded-2xl text-lg hover:bg-violet-700"
+                  disabled={isSending}
+                >
+                  {isSending ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <svg
+                        className="animate-spin h-5 w-5 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8v8H4z"
+                        />
+                      </svg>
+                      Sending...
+                    </span>
+                  ) : (
+                    'Send Message'
+                  )}
+                </Button>
+              </motion.div>
 
               {statusMessage && (
                 <motion.p
@@ -661,9 +714,10 @@ function App() {
                   {statusMessage}
                 </motion.p>
               )}
-            </form>
-          </div>
+            </motion.form>
+          </motion.div>
         </section>
+
 
       </div>
 
