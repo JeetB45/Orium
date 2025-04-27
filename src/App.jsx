@@ -18,6 +18,8 @@ import {
   Zap,
   Users,
   Send,
+  Hexagon,
+  Sparkles
 } from "lucide-react";
 
 function Button({ children, className, ...props }) {
@@ -329,23 +331,90 @@ function App() {
         </nav>
 
         {/* Hero Section */}
-        <section id="home" className="min-h-[80vh] flex flex-col justify-center items-center px-4 relative text-center">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-800/20 via-transparent to-transparent" />
-          <div className="relative z-10 max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-bold text-center mb-6">
-              <span className="bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent">
-                Elite Digital Solutions
+        <section
+          id="home"
+          className="min-h-[100vh] flex flex-col justify-center items-center px-4 relative text-center overflow-hidden bg-black"
+        >
+          {/* Floating Hexagons */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {[...Array(15)].map((_, i) => (
+              <div
+                key={`hexagon-${i}`}
+                className="absolute w-40 h-40 animate-floating"
+                style={{
+                  top: `${Math.floor(i / 3) * 25}%`,
+                  left: `${(i % 5) * 20}%`,
+                  opacity: 0.08,
+                  animationDuration: `${6 + (i % 5)}s`,
+                  animationDelay: `${i * 0.5}s`,
+                }}
+              >
+                <Hexagon className="w-full h-full text-violet-600 opacity-30" strokeWidth={1} />
+              </div>
+            ))}
+          </div>
+
+          {/* Animated Circuit Lines */}
+          <div className="absolute inset-0 pointer-events-none">
+            {[...Array(12)].map((_, i) => (
+              <div
+                key={`line-${i}`}
+                className="absolute h-[1px] w-[300px] bg-gradient-to-r from-transparent via-violet-500 to-transparent"
+                style={{
+                  top: `${(i * 100) / 12}%`,
+                  left: i % 2 === 0 ? '0' : 'auto',
+                  right: i % 2 === 0 ? 'auto' : '0',
+                  transform: `rotate(${i % 2 === 0 ? 0 : 180}deg)`,
+                  opacity: 0.15,
+                  animation: `moveLine ${5 + (i % 3)}s infinite linear`,
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Sparkling Stars */}
+          <div className="absolute inset-0 pointer-events-none">
+            {[...Array(8)].map((_, i) => (
+              <div
+                key={`sparkle-${i}`}
+                className="absolute animate-sparkle"
+                style={{
+                  top: `${Math.random() * 100}%`,
+                  left: `${Math.random() * 100}%`,
+                  animationDuration: `${3 + (i % 2)}s`,
+                  animationDelay: `${i * 0.4}s`,
+                }}
+              >
+                <Sparkles className="w-5 h-5 text-violet-400 opacity-50" />
+              </div>
+            ))}
+          </div>
+
+          {/* Main Hero Content */}
+          <div className="relative z-10 max-w-4xl mx-auto space-y-8">
+            <h1 className="text-5xl md:text-7xl font-bold text-center animate-fadeInUp">
+              <span className="bg-gradient-to-r from-violet-400 via-violet-200 to-violet-400 bg-clip-text text-transparent">
+                Empowering Innovation, <br className="hidden sm:block" />
+                Elevating Experiences
               </span>
             </h1>
-            <p className="text-xl text-gray-400 mb-12">
-              Empowering enterprises with cutting-edge technology so
-              lutions that drive innovation and digital excellence
+
+            <p className="text-xl text-gray-300 mb-8 animate-fadeInUp delay-300">
+              Transform your digital presence with cutting-edge solutions designed for tomorrow's businesses
             </p>
-            <div className="flex flex-row sm:flex-row justify-center items-center gap-6">
+
+            <div className="flex justify-center items-center animate-fadeInUp delay-500">
               <a href="#services">
-              <Button size="lg" className="bg-violet-600 hover:bg-violet-700 cursor-pointer flex justify-center items-center text-white px-8">
-              Explore Solutions <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+                <Button
+                  size="lg"
+                  className="bg-violet-600 cursor-pointer hover:bg-violet-700 transition-all duration-500 transform hover:scale-105 hover:shadow-glow group relative overflow-hidden"
+                >
+                  <span className="relative z-10 flex items-center gap-2">
+                    Explore Solutions
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-md" />
+                </Button>
               </a>
             </div>
           </div>
@@ -358,7 +427,7 @@ function App() {
               className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent mb-4 text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: -10 }}
-              transition={{ delay:0.2 ,duration: 0.6 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
             >
               Our Services
             </motion.h2>
@@ -568,9 +637,9 @@ function App() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <Button size="lg" className="bg-violet-600 flex justify-center items-center cursor-pointer hover:bg-violet-700">
-                  Schedule Now <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                  <Button size="lg" className="bg-violet-600 flex justify-center items-center cursor-pointer hover:bg-violet-700">
+                    Schedule Now <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
                 </div>
               </div>
             </div>
