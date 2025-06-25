@@ -191,10 +191,10 @@ function App() {
 
   const projects = [
     {
-      title: "AI-Powered Analytics Platform",
+      title: "City Enterprise Web Platform",
       description: "Enterprise-level analytics solution with advanced AI capabilities for real-time data processing",
       imageUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80",
-      link: "#",
+      link: "https://city-entreprise.vercel.app/",
     },
     {
       title: "Digital Transformation Suite",
